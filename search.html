@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--缩放比例为1-->
+
+    <title>TEST</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+
+<body>
+<div id="container">
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <a href="#" class="navbar-brand"><strong>test</strong>..com</a>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页</a> </li>
+                    <li><a href="#">BBBBBB</a> </li>
+                    <li><a href="#">CCCCCC</a> </li>
+                </ul>
+                <form action="" class="navbar-form navbar-right">
+                    <input type="text" placeholder="搜索" class="form-control">
+                </form>
+                <a class="navbar-btn btn btn-sm btn-primary navbar-right" href="#">登录</a>
+                <a class="navbar-btn btn btn-sm btn-primary navbar-right" href="#">注册</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <!--搜索框-->
+            <div class="input-group" align="center" >
+                <input type="text" class="form-control" placeholder="请输入你想搜索的航班信息 关键字：始站  终点  时间  价格" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1"><input type="button" value="查询"></span>
+            </div>
+            <!--标签行-->
+            <div>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#single" aria-controls="single" role="tab" data-toggle="tab">单程</a></li>
+                    <li role="presentation"><a href="#return" aria-controls="return" role="tab" data-toggle="tab">往返</a></li>
+                    <!--      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>-->
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!--单程-->
+                    <div role="tabpanel" class="tab-pane active" id="single">
+                        <div class="row">
+                            <form action="" >                                              <!--action-->
+                                <table width="50%" border="2" >
+                                    <tr>
+                                        <td>出发城市</td><td><input type="text" id="startCity1" placeholder="请输入始站" ></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>到达城市</td><td><input type="text" id="arrivalCity1" placeholder="请输入终站" ></td>
+                                    </tr>
+                                    <tr  >
+                                        <td colspan="2" align="center" >
+                                            <div class="form-group">
+                                                <label for="dtp_input1" class="col-md-2 control-label">起飞时间</label>
+                                                <div class="input-group date form_datetime col-md-5" data-date="2018-03-28T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                                    <input class="form-control" style="width: 250px" type="text" value="" readonly>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                                </div>
+                                                <input type="hidden" id="dtp_input1" value="" /><br/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan="2" align="right"><input type="submit" value="查询" id="serachbtn1" onclick="addRows(5)"></td> </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                    <!--往返-->
+                    <div role="tabpanel" class="tab-pane" id="return">
+                        <div class="row">
+                            <form action="" >                                              <!--action-->
+                                <table width="50%" border="2" >
+                                    <tr>
+                                        <td>出发城市</td><td><input type="text" id="startCity2" placeholder="请输入始站" ></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>到达城市</td><td><input type="text" id="arrivalCity2" placeholder="请输入终站" ></td>
+                                    </tr>
+                                    <tr  >
+                                        <td colspan="2" align="center" >
+                                            <div class="form-group">
+                                                <label for="dtp_input1" class="col-md-2 control-label">起飞时间</label>
+                                                <div class="input-group date form_datetime col-md-5" data-date="2018-03-28T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                                    <input class="form-control" style="width: 250px" type="text" value="" readonly>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                                </div>
+                                                <input type="hidden" id="dtp_input3" value="" /><br/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center" >
+                                            <div class="form-group">
+                                                <label for="dtp_input1" class="col-md-2 control-label">归程时间</label>
+                                                <div class="input-group date form_datetime col-md-5" data-date="2018-03-28T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                                    <input class="form-control" style="width: 250px" type="text" value="" readonly>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                                </div>
+                                                <input type="hidden" id="dtp_input2" value="" /><br/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan="2" align="right"><input type="submit" value="查询" id="serachbtn2" onclick="addRows(5)"></td> </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--            <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                                    <div role="tabpanel" class="tab-pane" id="settings">...</div>-->
+                </div>
+
+            </div>
+
+            <!--list-->
+
+            <div >
+                <h1 class="page-header">list </h1>
+                <table  id="myTable" border="3" width="50%">
+                    <th>/起飞地点</th>
+                    <th>/起飞时间</th>
+                    <th>/到达时间</th>
+                    <th>/达到地点</th>
+                    <th>/价格</th>
+                    <tr>
+                        <td>北京</td>
+                        <td>2018/3/27</td>
+                        <td>2018/3/28</td>
+                        <td>广州</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>北京</td>
+                        <td>2018/3/27</td>
+                        <td>2018/3/28</td>
+                        <td>广州</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>北京</td>
+                        <td>2018/3/27</td>
+                        <td>2018/3/28</td>
+                        <td>广州</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>北京</td>
+                        <td>2018/3/27</td>
+                        <td>2018/3/28</td>
+                        <td>广州</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>北京</td>
+                        <td>2018/3/27</td>
+                        <td>2018/3/28</td>
+                        <td>广州</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>北京</td>
+                        <td>2018/3/27</td>
+                        <td>2018/3/28</td>
+                        <td>广州</td>
+                        <td>120</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="container"  >
+            <nav class="navbar navbar-inverse">
+                <h1 ><strong>底部</strong></h1>
+            </nav>
+        </div>
+    </footer>
+</div>
+</body>
+
+<script>
+    $('#myTabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+</script>
+<script>
+    $('.form_datetime').datetimepicker({
+        weekStart: 0, //一周从哪一天开始
+        todayBtn:  1, //
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+</script>
+
+
+<script>
+    function addRows(num) {
+        var otable=document.getElementById("myTable");
+        var R=otable.insertRow(1);
+        var left=R.insertCell(0);
+        var right=R.insertCell(1);
+        left.innerHTML="div教程";
+        right.innerHTML="SEO教程";
+
+
+    }
+</script>
+</html>

@@ -1,0 +1,31 @@
+div{
+	display:block;
+}
+
+#header_cont_nav{
+	float:left;
+	display:inline;
+	margin:20px 0 0 0;
+	width:1000px;
+	height:50px;
+}
+#main_cont{
+	margin:20px 0 0 0;	
+	width:100%;
+}
+#main_cont_search{
+	
+	margin:10px 0 0 0;	
+}
+
+#main_cont_search_in1,#main_cont_search_in2{
+	
+	display:inline;
+	
+}
+#main_cont_tag{
+	margin:50px 0 0 0;
+}
+#single{
+	
+}
